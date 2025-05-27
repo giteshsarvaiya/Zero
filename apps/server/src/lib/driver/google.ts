@@ -865,7 +865,7 @@ export class GoogleMailManager implements MailManager {
     const defaultFromEmail = this.config.auth?.email || 'nobody@example.com';
     const senderEmail = fromEmail || defaultFromEmail;
 
-    msg.setSender({ name: '', addr: senderEmail });
+    msg.setSender(`${fromEmail}`);
 
     const uniqueRecipients = new Set<string>();
 
